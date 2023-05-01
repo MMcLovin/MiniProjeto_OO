@@ -5,13 +5,15 @@ public class Usuario {
 	private String nome;
 	private String Documento;
 	private String telefone;
+	private String email;
 	private String Endereço;
 	
 	//construtores
-	public Usuario(String n, String c, String tel, String e) {
+	public Usuario(String n, String c, String tel, String email,String e) {
 		this.nome = n;
 		this.Documento = c;
 		this.telefone = tel;
+		this.email = email;
 		this.Endereço = e;
 	}
 	public Usuario() {

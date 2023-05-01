@@ -19,6 +19,12 @@ public class Itinerario {
 		this.destino = dest;
 	}
 	//metodos
+	public void infoAtributos() {
+		System.out.println("Data de embarque:    " + this.getDataEmbarque() + " às " + this.getHoraEmbarque());
+		System.out.println("Data de desembarque: " + this.getDataDesembarque() + " às " + this.getHoraDesembarque());
+		System.out.println("Local de origem:     " + this.getOrigem());
+		System.out.println("Local de destino:    " + this.getDestino());
+	}
 	
 	//getters and setters
 	public String getDataEmbarque() {

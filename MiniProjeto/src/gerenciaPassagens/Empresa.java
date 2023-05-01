@@ -7,8 +7,8 @@ public class Empresa extends Usuario{
 	private ArrayList<Passagem> passagens;
 
 	//CONSTRUTORES
-	public Empresa(String n, String cnpj, String tel, String e) {
-		super(n, cnpj, tel, e);
+	public Empresa(String n, String cnpj, String tel, String email, String e) {
+		super(n, cnpj, tel, email, e);
 		this.passagens = new ArrayList<Passagem>();
 	}
 	
@@ -26,7 +26,8 @@ public class Empresa extends Usuario{
 	}
 	public void listaPassagens() {
 		for (int i = 0; i < passagens.size(); i++) {
-			System.out.println("------------------------------------");
+			System.out.println("Listando passagens da empresa: " + this.getName() + "\n");
+			//System.out.println("------------------------------------");
 			System.out.println("Passagem " + (i + 1) + "\n");
 			passagens.get(i).infoAtributos();
 			System.out.println("------------------------------------");

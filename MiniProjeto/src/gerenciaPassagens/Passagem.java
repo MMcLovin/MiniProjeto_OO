@@ -22,6 +22,7 @@ public class Passagem {
 	//metodos
 	
 	public void infoAtributos() {
+		this.getItinerario().infoAtributos();
 		System.out.println("valor: 		     R$ " + this.preco);								
 		System.out.println("Tipo de Poltrona:    " + this.tipo_poltrona);			
 		System.out.println("Numero da Poltrona:  " + this.num_poltrona);										

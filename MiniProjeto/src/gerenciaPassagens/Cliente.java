@@ -4,8 +4,8 @@ public class Cliente extends Usuario{
 	//atributos
 
 	//construtores
-	public Cliente(String n, String cpf, String tel, String e) {
-		super(n, cpf, tel, e);
+	public Cliente(String n, String cpf, String tel, String email, String e) {
+		super(n, cpf, tel, email, e);
 	}
 	
 	//metodos
