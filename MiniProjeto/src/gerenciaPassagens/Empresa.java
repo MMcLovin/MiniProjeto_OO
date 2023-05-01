@@ -5,11 +5,13 @@ import java.util.ArrayList;
 public class Empresa extends Usuario{
 	//ATRIBUTOS
 	private ArrayList<Passagem> passagens;
+	private BuscadorItinerario buscador;
 
 	//CONSTRUTORES
 	public Empresa(String n, String cnpj, String tel, String email, String e) {
 		super(n, cnpj, tel, email, e);
 		this.passagens = new ArrayList<Passagem>();
+		this.buscador = new BuscadorItinerario(this.passagens);
 	}
 	
 	//METODOS
@@ -38,4 +40,15 @@ public class Empresa extends Usuario{
 		System.out.println("CNPJ:      " + this.getDocumento());
 		System.out.println("Número de Passagens: " + this.passagens.size());
 	}
+	//getters and setters
+
+	public BuscadorItinerario getBuscador() {
+		return buscador;
+	}
+
+	public void setBuscador(BuscadorItinerario buscador) {
+		this.buscador = buscador;
+	}
+	
+	
 }

@@ -6,12 +6,12 @@ public class Main {
 		
 		String[] i = new String[18];
 		//itinerario 1
-		i[0] = "29/04/23";
-		i[1] = "30/04/23";
-		i[2] = "10h00";
-		i[3] = "11h00";
-		i[4] = "Braília - DF";
-		i[5] = "São Paulo - SP";
+		i[0] = "29/04/23";			//data de embarque
+		i[1] = "30/04/23";			//data de desembarque
+		i[2] = "10h00";				//hora de embarque
+		i[3] = "11h00";				//hora de desembarque
+		i[4] = "Braília - DF";		//local de origem
+		i[5] = "São Paulo - SP";	//local de destino 
 		//Itinerario 2
 		i[6] = "01/05/23";
 		i[7] = "01/05/23";
@@ -41,9 +41,19 @@ public class Main {
 		emp1.cadastraPassagem(p1);
 		//emp2.cadastraPassagem(p2);
 		
-		emp1.listaPassagens();
-		emp2.listaPassagens();		
+		//emp1.listaPassagens();
+		//emp2.listaPassagens();		
 		
+		//testando buscador para datas
+		emp1.getBuscador().buscaDataDesem("30/04/23");
+		emp1.getBuscador().buscaDataDesem("01/04/23");
+		emp1.getBuscador().buscaDataEm("29/04/23");;
+		emp1.getBuscador().buscaDataEm("28/04/30");;
+		//testando buscador para locais
+		emp1.getBuscador().buscaOrig("Braília - DF");
+		emp1.getBuscador().buscaOrig("São Paulo - SP");
+		emp1.getBuscador().buscaDest("São Paulo - SP");
+		emp1.getBuscador().buscaDest("Braília - DF");
 
 	}
 

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class BuscadorItinerario {
 	//atributos
-	protected ArrayList<Passagem> passagens;
+	private ArrayList<Passagem> passagens;
 	
 	//construtor
 	public BuscadorItinerario(ArrayList<Passagem> p) {
@@ -12,63 +12,73 @@ public class BuscadorItinerario {
 	}
 	
 	//metodos
-	public Passagem buscaDataEm(String dtEm) {
-		int j = 0, i = 0;
-		for (; i <= passagens.size(); i++) {
+	//cada buscador varre os atributos de cada um dos elementos da
+	//arraylist de passagnes, comparando a string recebida com parametro 
+	//com a string do atributo para verificar se coincidem e então printar 
+	//a passagem correspondente, caso n existam passagens com o paramentro passado
+	//uma mensagem sera printada
+	public void buscaDataEm(String dtEm) {
+		
+		boolean achou = false;
+		
+		for (int i = 0; i < passagens.size(); i++) {
 			if (passagens.get(i).getItinerario().getDataEmbarque() == dtEm) {
-				return passagens.get(i);
+				achou = true;
+				System.out.println("Achamos uma passagem!\n");
+				this.passagens.get(i).infoAtributos();
 			}
 		}
-		return null;
+		if (achou == false) {
+			System.out.println("\nNão há passagens com esta data\n");
+		}
 	}
 	
-	public Passagem buscaDataDes(String dtDes) {
-		int j = 0, i = 0;
-		for (; i <= passagens.size(); i++) {
+	public void buscaDataDesem(String dtDes) {
+		
+		boolean achou = false;
+		
+		for (int i = 0; i < passagens.size(); i++) {
 			if (passagens.get(i).getItinerario().getDataDesembarque() == dtDes) {
-				return passagens.get(i);
+				achou = true;
+				System.out.println("Achamos uma passagem!\n");
+				this.passagens.get(i).infoAtributos();
 			}
 		}
-		return null;
+		if (achou == false) {
+			System.out.println("\nNão há passagens com esta data\n");
+		}
 	}
 	
-	public Passagem buscaHrEmb(String hrEm) {
-		int j = 0, i = 0;
-		for (; i <= passagens.size(); i++) {
-			if (passagens.get(i).getItinerario().getHoraEmbarque() == hrEm) {
-				return passagens.get(i);
-			}
-		}
-		return null;
-	}
-	public Passagem buscaHrDes(String hrDes) {
-		int i = 0;
-		for (; i <= passagens.size(); i++) {
-			if (passagens.get(i).getItinerario().getHoraDesembarque() == hrDes) {
-				return passagens.get(i);
-			}
-		}
-		return null;
-	}
-	
-	public Passagem buscaOrig(String Orig) {
-		int i = 0;
-		for (; i <= passagens.size(); i++) {
+	public void buscaOrig(String Orig) {
+		
+		boolean achou = false;
+		
+		for (int i = 0; i < passagens.size(); i++) {
 			if (passagens.get(i).getItinerario().getOrigem() == Orig) {
-				return passagens.get(i);
+				achou = true;
+				System.out.println("Achamos uma passagem!\n");
+				this.passagens.get(i).infoAtributos();
 			}
 		}
-		return null;
+		if (achou == false) {
+			System.out.println("\nNão há passagens com esta origem\n");
+		}
 	}
 	
-	public Passagem buscaDest(String dest) {
-		int i = 0;
-		for (; i <= passagens.size(); i++) {
+	public void buscaDest(String dest) {
+		
+		boolean achou = false;
+		
+		for (int i = 0; i < passagens.size(); i++) {
 			if (passagens.get(i).getItinerario().getDestino() == dest) {
-				return passagens.get(i);
+				achou = true;
+				System.out.println("Achamos uma passagem!\n");
+				this.passagens.get(i).infoAtributos();
 			}
 		}
-		return null;
+		if (achou == false) {
+			System.out.println("\nNão há passagens com este destino\n");
+		}
 	}
 	
 	//getters and setters
