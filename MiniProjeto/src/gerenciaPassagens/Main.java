@@ -42,7 +42,7 @@ public class Main {
 		//emp2.cadastraPassagem(p2);
 		
 		emp1.listaPassagens();
-		
+		emp2.listaPassagens();		
 		
 
 	}
